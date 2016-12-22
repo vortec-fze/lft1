@@ -74,32 +74,32 @@
     <!--             EXERCISES                -->    
         <div data-role="collapsibleset" data-theme="b" data-content-theme="b">
             <div data-role="collapsible">
-                <h3>Pullups</h3>
-                    <input type="range" name="slider-pullups" id="slider_pullups" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
+                <h3><div class="custom-count-pos" id="CountPullups">0</div>Pullups</h3>
+                    <input type="range" name="slider-pullups" id="slider_pullups" data-track-theme="b" data-theme="b" min="0" max="100" value="0" onchange="updatePullups(this.value)">
             </div>
             <div data-role="collapsible">
-                <h3>Benchpress</h3>
-                    <input type="range" name="slider-p" id="slider_benchpress" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
+                <h3><div class="custom-count-pos" id="CountBenchpress">0</div>Benchpress</h3>
+                    <input type="range" name="slider-p" id="slider_benchpress" data-track-theme="b" data-theme="b" min="0" max="100" value="0" onchange="updateBenchpress(this.value)">
             </div>
             <div data-role="collapsible">
-                <h3>Squats</h3>
-                    <input type="range" name="slider-p" id="slider_squats" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
+                <h3><div class="custom-count-pos" id="CountSquats">0</div>Squats</h3>
+                    <input type="range" name="slider-p" id="slider_squats" data-track-theme="b" data-theme="b" min="0" max="100" value="0" onchange="updateSquats(this.value)">
             </div>
             <div data-role="collapsible">
-                <h3>Lunges</h3>
-                    <input type="range" name="slider-p" id="slider_lunges" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
+                <h3><div class="custom-count-pos" id="CountLunges">0</div>Lunges</h3>
+                    <input type="range" name="slider-p" id="slider_lunges" data-track-theme="b" data-theme="b" min="0" max="100" value="0" onchange="updateLunges(this.value)">
             </div>
             <div data-role="collapsible">
-                <h3>Rows</h3>
-                    <input type="range" name="slider-p" id="slider_rows" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
+                <h3><div class="custom-count-pos" id="CountRows">0</div>Rows</h3>
+                    <input type="range" name="slider-p" id="slider_rows" data-track-theme="b" data-theme="b" min="0" max="100" value="0" onchange="updateRows(this.value)">
             </div>
             <div data-role="collapsible">
-                <h3>Military Press</h3>
-                    <input type="range" name="slider-p" id="slider_militarypress" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
+                <h3><div class="custom-count-pos" id="CountMilPress">0</div>Military Press</h3>
+                    <input type="range" name="slider-p" id="slider_militarypress" data-track-theme="b" data-theme="b" min="0" max="100" value="0" onchange="updateMilPress(this.value)">
             </div>
             <div data-role="collapsible">
-                <h3>Deadlifts</h3>
-                    <input type="range" name="slider-p" id="slider_deadlifts" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
+                <h3><div class="custom-count-pos" id="CountDeadlifts">0</div>Deadlifts</h3>
+                    <input type="range" name="slider-p" id="slider_deadlifts" data-track-theme="b" data-theme="b" min="0" max="100" value="0" onchange="updateDeadlifts(this.value)">
             </div>
         </div>
     <!---              LOG SAVE BUTTON        -->       
@@ -134,7 +134,6 @@
     <div data-role="content">
     <!--               LIFTAMOBO SVG        -->             
         <div id="picHolder">
-     <!--       <img id="pic" src = "images/bodyfront1.svg" alt ="body">  -->
             <svg id="pic" x="0px" y="0px" width="250px" height="500px" viewBox="0 0 250 500" enable-background="new 0 0 250 500" xml:space="preserve">
                 <circle id="head" fill="#FFED00" stroke="#000000" stroke-miterlimit="10" cx="124.7" cy="49.3" r="37.9" stroke-width="1"/>
                 <path id="lshoulder" fill="#F6A000" stroke="#000000" stroke-width="1" stroke-miterlimit="10" d="M77.5,128.5c0,6.6-5.4,12-12,12h-6c-6.6,0-12-5.4-12-12v-17
@@ -179,11 +178,6 @@
                 <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="117.6" y1="5.8" x2="132.8" y2="20.8"/>
             </svg>  
         </div>
-            <br>
-            <br> 
-            <br>
-            <br>
-            <br>
        <!--                DATA DISPLAY/SLIDER     --->
         <div id="progresslider">
             <input type="range" name="slide" id="slide" data-track-theme="b" data-theme="b" min="5" max="155" value="100" step="5" onchange="updateSlider(this.value)">
@@ -256,223 +250,3 @@
 </div>    
 </body>
 </html>
-
-
-
-
-
-
-            <li><a href="#page1">Home Screen</a></li>
-            <li><a href="#page2">Exercises</a></li>
-            <li><a href="#page3">Progress</a></li>
-            <li><a href="#page4">Test Screen</a></li>            
-            <li><a href="#page5">Data Dump</a></li>     
-        </ul>
-    </div>
-    <!--             HEADER          -->
-    <div data-add-back-btn = "true" data-role="header" data-theme="b">
-        <h1>Lift-a-mobo</h1>
-        <a href="#menu2" data-icon="grid">Menu</a> 
-    </div>
-    <!--             PAGE 2 CONTENT         -->
-    <div data-role="content"> 
-        <div class="time">
-            <p id="todayDate"></p>
-        </div>
-        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
-            <h3>Body Progress</h3>
-            <div class="centered">
-                <a href = "#page3"><img src ="images/Fclass2.svg" id="bum"></a>
-                <p>lift-a-mobo!</p>
-            </div>
-        </div>
-    <!--             EXERCISES                -->    
-        <div data-role="collapsibleset" data-theme="b" data-content-theme="b">
-            <div data-role="collapsible">
-                <h3>Pullups</h3>
-                    <input type="range" name="slider-pullups" id="slider_pullups" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
-            </div>
-            <div data-role="collapsible">
-                <h3>Benchpress</h3>
-                    <input type="range" name="slider-p" id="slider_benchpress" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
-            </div>
-            <div data-role="collapsible">
-                <h3>Squats</h3>
-                    <input type="range" name="slider-p" id="slider_squats" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
-            </div>
-            <div data-role="collapsible">
-                <h3>Lunges</h3>
-                    <input type="range" name="slider-p" id="slider_lunges" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
-            </div>
-            <div data-role="collapsible">
-                <h3>Rows</h3>
-                    <input type="range" name="slider-p" id="slider_rows" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
-            </div>
-            <div data-role="collapsible">
-                <h3>Military Press</h3>
-                    <input type="range" name="slider-p" id="slider_militarypress" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
-            </div>
-            <div data-role="collapsible">
-                <h3>Deadlifts</h3>
-                    <input type="range" name="slider-p" id="slider_deadlifts" data-track-theme="b" data-theme="b" min="0" max="100" value="0">
-            </div>
-        </div>
-    <!---              LOG SAVE BUTTON        -->       
-        <form>
-             <input type="submit" data-theme="b" value="LOG MY WORK" id="savebttn">
-        </form>
-    </div>
-    <!--               FOOOTER           -->
-     <div data-role="footer" data-position="fixed" data-theme="b">
-        <h1>Powered by Vortec</h1>
-    </div>
-</div>   
-
-        
-<!---               PAGE 3                  -->
-<div data-role="page" id="page3" data-theme="b">
-    <!--            MENU INFO              -->
-    <div data-role="panel" id="menu3">
-        <ul data-role="listview">
-            <li><a href="#page1">Home Screen</a></li>
-            <li><a href="#page2">Exercises</a></li>
-            <li><a href="#page3">Progress</a></li>
-            <li><a href="#page4">Test Screen</a></li>
-            <li><a href="#page5">Data Dump</a></li>                 
-        </ul>
-    </div>
-    <!--            HEADER                  -->
-    <div data-add-back-btn = "true" data-role="header" data-theme="b">
-        <h1>Lift-a-mobo</h1>
-        <a href="#menu3" data-icon="grid">Menu</a> 
-    </div>
-    <div data-role="content">
-    <!--               LIFTAMOBO SVG        -->             
-        <div id="picHolder">
-     <!--       <img id="pic" src = "images/bodyfront1.svg" alt ="body">  -->
-            <svg id="pic" x="0px" y="0px" width="250px" height="500px" viewBox="0 0 250 500" enable-background="new 0 0 250 500" xml:space="preserve">
-                <circle id="head" fill="#FFED00" stroke="#000000" stroke-miterlimit="10" cx="124.7" cy="49.3" r="37.9" stroke-width="1"/>
-                <path id="lshoulder" fill="#F6A000" stroke="#000000" stroke-width="1" stroke-miterlimit="10" d="M77.5,128.5c0,6.6-5.4,12-12,12h-6c-6.6,0-12-5.4-12-12v-17
-                    c0-6.6,5.4-12,12-12h6c6.6,0,12,5.4,12,12V128.5z"/>
-                <path id="rshoulder" fill="#F6A000" stroke="#000000" stroke-miterlimit="10" d="M201.5,128.5c0,6.6-5.4,12-12,12h-6c-6.6,0-12-5.4-12-12v-17
-                    c0-6.6,5.4-12,12-12h6c6.6,0,12,5.4,12,12V128.5z"/>
-                <polygon id="chestb" fill="#009FE3" stroke="#FFED00" stroke-miterlimit="10" points="134.5,87.5 115.5,87.5 77.5,100.9 77.5,116.6 82.7,169.5 
-                    167.4,169.5 171.5,116.6 171.5,99.3 "/>
-                <rect id="stomachb" x="82.5" y="169.5" fill="#FEC700" stroke="#000000" stroke-miterlimit="10" width="85" height="92"/>
-                <polygon id="lquad" fill="#BCCF00" stroke="#312783" stroke-miterlimit="10" points="113.7,360.5 66.5,360.5 82.5,261.5 124.5,261.5 "/>
-                <polygon id="rquad" fill="#BCCF00" stroke="#312783" stroke-miterlimit="10" points="183.5,360.5 143.7,360.5 125.5,261.5 168.5,261.5 "/>
-                <polygon id="lcalf" fill="#312783" stroke="#000000" stroke-miterlimit="10" points="95.5,457.5 66.5,457.5 66.5,360.5 113.5,360.5 "/>
-                <polygon id="rcalf" fill="#312783" stroke="#000000" stroke-miterlimit="10" points="183.5,457.5 154.5,457.5 143.7,360.5 183.5,360.5 "/>
-                <path id="lbicep" fill="#3AAA35" stroke="#E30613" stroke-miterlimit="10" d="M73.5,193c0,6.4-5.1,11.5-11.5,11.5l0,0c-6.4,0-11.5-5.1-11.5-11.5
-                    v-41c0-6.4,5.1-11.5,11.5-11.5l0,0c6.4,0,11.5,5.1,11.5,11.5V193z"/>
-                <path id="rbicep" fill="#3AAA35" stroke="#E30613" stroke-miterlimit="10" d="M200.5,193c0,6.4-5.1,11.5-11.5,11.5l0,0
-                    c-6.4,0-11.5-5.1-11.5-11.5v-41c0-6.4,5.1-11.5,11.5-11.5l0,0c6.4,0,11.5,5.1,11.5,11.5V193z"/>
-                <path id="lforearm" fill="#B14191" stroke="#000000" stroke-miterlimit="10" d="M71.5,249.2c0,5.2-4.2,9.3-9.3,9.3h-0.3c-5.2,0-9.3-4.2-9.3-9.3
-                    v-35.3c0-5.2,4.2-9.3,9.3-9.3h0.3c5.2,0,9.3,4.2,9.3,9.3V249.2z"/>
-                <path id="rforearm" fill="#B14191" stroke="#000000" stroke-miterlimit="10" d="M198.5,249.2c0,5.2-4.2,9.3-9.3,9.3h-0.3c-5.2,0-9.3-4.2-9.3-9.3
-                    v-35.3c0-5.2,4.2-9.3,9.3-9.3h0.3c5.2,0,9.3,4.2,9.3,9.3V249.2z"/>
-                <ellipse id="leye" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="110.5" cy="41" rx="15" ry="12"/>
-                <ellipse id="reye" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="140" cy="49" rx="14.5" ry="8"/>
-                <line id="smile" fill="none" stroke="#000000" stroke-miterlimit="10" x1="110.5" y1="68" x2="130.7" y2="66.3" stroke-width="1"/>
-                <ellipse id="liris" fill="#070707" stroke="#000000" stroke-miterlimit="10" cx="100.2" cy="39.3" rx="2.8" ry="4.1"/>
-                <ellipse id="riris" fill="#351B1B" stroke="#000000" stroke-miterlimit="10" cx="143" cy="50.6" rx="4.7" ry="5.2"/>
-                <line id="abvert" fill="none" stroke="#000000" stroke-miterlimit="10" x1="125.5" y1="181" x2="125.5" y2="227"/>
-                <line id="abhoriz1" fill="none" stroke="#000000" stroke-miterlimit="10" x1="114" y1="192.5" x2="137" y2="192.5"/>
-                <line id="abhoriz2" fill="none" stroke="#000000" stroke-miterlimit="10" x1="116" y1="211.5" x2="135" y2="211.5"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="91.8" y1="8.2" x2="127.8" y2="14.2"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="120.6" y1="16.5" x2="151.7" y2="7"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="114" y1="2.8" x2="144.2" y2="15.5"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="111.7" y1="17.5" x2="135.3" y2="4.7"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="91.8" y1="12.8" x2="147.7" y2="19.1"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="149.2" y1="11.8" x2="114" y2="16"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="111.7" y1="7" x2="125" y2="16.6"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="125.5" y1="2.8" x2="122.7" y2="14.9"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="140" y1="5.8" x2="118.3" y2="16"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="159.8" y1="17.5" x2="117" y2="13.9"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="106.2" y1="5.8" x2="129.1" y2="17.5"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="143" y1="4.7" x2="119.2" y2="11.8"/>
-                <line fill="none" stroke="#050083" stroke-miterlimit="10" x1="117.6" y1="5.8" x2="132.8" y2="20.8"/>
-            </svg>  
-        </div>
-            <br>
-            <br> 
-            <br>
-            <br>
-            <br>
-       <!--                DATA DISPLAY/SLIDER     --->
-        <div id="progresslider">
-            <input type="range" name="slide" id="slide" data-track-theme="b" data-theme="b" min="5" max="155" value="100" step="5" onchange="updateSlider(this.value)">
-        </div>
-        <!--             FOOOTER     -->
-        <div id="chosen">100</div>     
-        <div data-role="footer" data-position="fixed" data-theme="b">
-                <h1>Powered by Vortec</h1>
-        </div>
-    </div> 
-</div>
-<!--        Page 4 Test     --->
-<div data-role="page" id="page4" data-theme="b">
-    <!--          MENU PANEL      -->
-    <div data-role="panel" id="menu4">
-        <ul data-role="listview">
-            <li><a href="#page1">Home Screen</a></li>
-            <li><a href="#page2">Exercises</a></li>
-            <li><a href="#page3">Progress</a></li>
-            <li><a href="#page4">Test Screen</a></li>            
-            <li><a href="#page5">Data Dump</a></li>     
-        </ul>
-    </div>
-    <!--             HEADER          -->
-    <div data-add-back-btn = "true" data-role="header" data-theme="b">
-        <h1>Lift-a-mobo</h1>
-        <a href="#menu4" data-icon="grid">Menu</a> 
-    </div>
-     <!--           MISC CONTENT     -->
-    <div data-role="content">
-        <p3>MISC</p3>
-    </div>
-    <!--                  FOOER           -->
-    <div data-role="footer" data-position="fixed" data-theme="b">
-        <h1>Powered by Vortec</h1>
-    </div>
-</div>
-   <!--        PAGE 5 DATADUMP     ---> 
-<div data-role="page" id="page5" data-theme="b">
-    <!--          MENU PANEL      -->
-    <div data-role="panel" id="menu5">
-        <ul data-role="listview">
-            <li><a href="#page1">Home Screen</a></li>
-            <li><a href="#page2">Exercises</a></li>
-            <li><a href="#page3">Progress</a></li>
-            <li><a href="#page4">Test Screen</a></li>            
-            <li><a href="#page5">Data Dump</a></li>     
-        </ul>
-    </div>
-    <!--             HEADER          -->
-    <div data-add-back-btn = "true" data-role="header" data-theme="b">
-        <h1>Lift-a-mobo</h1>
-        <a href="#menu5" data-icon="grid">Menu</a> 
-    </div>
-    <!--           DATADUMP CONTENT     -->
-    <div data-role="content">
-        <ul id="dataDisplay">
-            
-            
-            
-        </ul>
-        <form>
-            <button id="clear">Clear All</button>
-        </form>
-    </div>
-    <!--             FOOOOOOOTER  -->
-    <div data-role="footer" data-position="fixed" data-theme="b">
-        <h1>Powered by Vortec</h1>
-    </div>
-</div>    
-</body>
-</html>
-
-
-
-
-
